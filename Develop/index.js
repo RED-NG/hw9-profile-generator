@@ -1,3 +1,4 @@
+const axios = require("axios");
 const inquirer = require("inquirer");
 const generateHTML = require("./generateHTML");
 
@@ -14,7 +15,12 @@ const questions = [
 function writeToFile(fileName, data) {}
 
 function init() {
-  inquirer.prompt(questions);
+  inquirer.prompt(questions).then(function({ username, color }) {
+    const queryURL = `https://api.github.com/users/${username}`;
+    axios.get(queryURL).then(function({ data }) {
+      console.log(data);
+    });
+  });
 }
 
 init();
