@@ -1,7 +1,7 @@
 {
   "name": "profile-generator",
   "version": "1.0.0",
-  "description": "Create a command-line application that dynamically generates a PDF profile from a GitHub username. The application will be invoked with the following command:",
+  "description": "Create a command-line application that dynamically generates a PDF profile from a GitHub username. The application will be invoked with the following commands: npm install and node index.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +19,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "fs": "0.0.1-security",
+    "html-pdf": "^2.2.0",
     "inquirer": "^7.0.6"
   }
 }
