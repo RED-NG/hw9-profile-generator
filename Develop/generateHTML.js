@@ -3,26 +3,26 @@ const colors = {
     wrapperBackground: "#E6E1C3",
     headerBackground: "#C1C72C",
     headerColor: "black",
-    photoBorderColor: "#black"
+    photoBorderColor: "#black",
   },
   blue: {
     wrapperBackground: "#5F64D3",
     headerBackground: "#26175A",
     headerColor: "white",
-    photoBorderColor: "#73448C"
+    photoBorderColor: "#73448C",
   },
   pink: {
     wrapperBackground: "#879CDF",
     headerBackground: "#FF8374",
     headerColor: "white",
-    photoBorderColor: "#FEE24C"
+    photoBorderColor: "#FEE24C",
   },
   red: {
     wrapperBackground: "#DE9967",
     headerBackground: "#870603",
     headerColor: "white",
-    photoBorderColor: "white"
-  }
+    photoBorderColor: "white",
+  },
 };
 
 function generateHTML(data) {
@@ -93,6 +93,7 @@ function generateHTML(data) {
          margin-bottom: -50px;
          display: flex;
          justify-content: center;
+         text-align: center;
          flex-wrap: wrap;
          background-color: ${colors[data.color].headerBackground};
          color: ${colors[data.color].headerColor};
@@ -106,6 +107,7 @@ function generateHTML(data) {
          border-radius: 50%;
          object-fit: cover;
          margin-top: -75px;
+         text-align: center;
          border: 6px solid ${colors[data.color].photoBorderColor};
          box-shadow: rgba(0, 0, 0, 0.3) 4px 1px 20px 4px;
          }
@@ -176,7 +178,7 @@ function generateHTML(data) {
       <div class="wrapper">
       <div class="photo-header">
          <img src="${data.avatar_url}" alt="Profile Picture" />
-         <h1>Hi!</h1>
+         <h1>Salutations!</h1>
          <h2>
          My name is ${data.name}</h1>
          <nav class="links-nav">
@@ -209,13 +211,6 @@ function generateHTML(data) {
                <h4>${data.followers}</h4>
              </div>
             </div>
-            </div>
-            <div class="row">
-            <div class="col">
-            <div class="card">
-               <h3>GitHub Stars</h3>
-               <h4>${data.stars}</h4>
-               </div>
             </div>
              <div class="col">
              <div class="card">

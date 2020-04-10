@@ -9,25 +9,14 @@ const questions = [
     type: "list",
     name: "color",
     message: "What is your favorite color?",
-    choices: ["green", "blue", "pink", "red"]
-  }
+    choices: ["green", "blue", "pink", "red"],
+  },
 ];
 
 function init() {
-  inquirer.prompt(questions).then(function({ username, color }) {
+  inquirer.prompt(questions).then(function ({ username, color }) {
     const queryURL = `https://api.github.com/users/${username}`;
-    axios.get(queryURL).then(function({ data }) {
-      console.log(color);
-      console.log(username);
-      // console.log(data);
-      console.log(data.followers);
-      console.log(data.avatar_url);
-      console.log(data.location);
-      console.log(data.bio);
-      console.log(data.name);
-      console.log(data.login);
-      console.log(data.public_repos);
-
+    axios.get(queryURL).then(function ({ data }) {
       const gitProfile = {
         color: color,
         username: data.username,
@@ -38,11 +27,11 @@ function init() {
         public_repos: data.public_repos,
         followers: data.followers,
         following: data.following,
-        github: data.login
+        github: data.login,
       };
       pdf
         .create(generateHTML(gitProfile))
-        .toFile(`./${gitProfile.name}.pdf`, function(err, res) {
+        .toFile(`./${gitProfile.name}.pdf`, function (err, res) {
           if (err) console.log(err);
           console.log(res);
         });
